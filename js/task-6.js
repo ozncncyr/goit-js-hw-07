@@ -10,6 +10,7 @@ const input = document.querySelector("input");
 const createBtn = document.querySelector("[data-create]");
 const destroyBtn = document.querySelector("[data-destroy]");
 const boxes = [];
+console.log(`Number of Boxes: ${boxes.length}`);
 
 const createBoxes = amount => {
   for (let i = 0; i < amount; i += 1) {
@@ -40,6 +41,8 @@ createBtn.addEventListener("click", () => {
       alert("Please enter a number between 1 and 100");
     }
   input.value = "";
+  console.clear();
+  console.log(`Number of Boxes: ${boxes.length}`);
 }
 );
 
@@ -48,3 +51,5 @@ destroyBtn.addEventListener("click", destroyBoxes);
 const boxPanel = document.querySelector("#boxes");
 boxPanel.style.display = "flex";
 boxPanel.style.flexWrap = "wrap";
+
+

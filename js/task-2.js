@@ -1,3 +1,5 @@
+// Task-2
+
 const images = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?dpr=2&h=750&w=1260",
@@ -24,3 +26,12 @@ const images = [
     alt: "Lighthouse Coast Sea",
   }
 ];
+
+const gallery = document.querySelector(".gallery");
+const galleryItems = images.map(image => `<li><img src="${image.url}" alt="${image.alt}" width="420" height="250"></li>`).join("");
+gallery.insertAdjacentHTML("beforeend", galleryItems)
+
+// gallery.style.display = "flex";
+// gallery.style.flexWrap = "wrap";
+// gallery.style.listStyle = "none";
+// gallery.style.gap = "20px"

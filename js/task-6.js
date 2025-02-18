@@ -32,9 +32,19 @@ const destroyBoxes = () => {
 createBtn.addEventListener("click", () => {
   destroyBoxes();
   const amount = input.value;
-  createBoxes(amount).forEach(box => {
+  if (amount > 0 && amount <= 100) {
+    createBoxes(amount).forEach(box => {
     document.querySelector("#boxes").append(box);
   });
-});
+  } else {
+      alert("Please enter a number between 1 and 100");
+    }
+  input.value = "";
+}
+);
 
 destroyBtn.addEventListener("click", destroyBoxes);
+
+const boxPanel = document.querySelector("#boxes");
+boxPanel.style.display = "flex";
+boxPanel.style.flexWrap = "wrap";

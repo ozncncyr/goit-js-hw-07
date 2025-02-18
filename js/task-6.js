@@ -20,6 +20,8 @@ const createBoxes = amount => {
     box.style.backgroundColor = getRandomHexColor();
     boxes.push(box);
   }
+  console.clear();
+  console.log(`Number of Boxes: ${boxes.length}`);
   return boxes;
 };
 
@@ -28,6 +30,8 @@ const destroyBoxes = () => {
     box.remove();
   });
   boxes.length = 0;
+  console.clear();
+  console.log(`Number of Boxes: ${boxes.length}`);
 };
 
 createBtn.addEventListener("click", () => {
@@ -41,8 +45,6 @@ createBtn.addEventListener("click", () => {
       alert("Please enter a number between 1 and 100");
     }
   input.value = "";
-  console.clear();
-  console.log(`Number of Boxes: ${boxes.length}`);
 }
 );
 
